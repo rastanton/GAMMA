@@ -9,12 +9,12 @@ GAMMA requires a genome or assembly in fasta format and a multifasta database of
 
 There are five optional arguments:
 
-  -a, --all           Returns all (including overlapping) gene matches
+  -a,--all:            \Returns all (including overlapping) gene matches
   
-  -e, --extended      Returns all gene mutations, otherwise if there are more than 10 mutations present the count is given
+  -e, --extended:      Returns all gene mutations, otherwise if there are more than 10 mutations present the count is given
   
-  -f, --fasta         Writes out a multifasta file of the gene matches
+  -f, --fasta:         Writes out a multifasta file of the gene matches
   
-  -g, -gff            Generates a general feature format (.gff) file of the output gene matches
+  -g, -gff:            Generates a general feature format (.gff) file of the output gene matches
   
-  -i, --identity      The minimum nucleotide sequence identiy % used by the Blat search
+  -i, --identity:      The minimum nucleotide sequence identiy % used by the Blat search
