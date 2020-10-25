@@ -17,4 +17,4 @@ There are five optional arguments:
   
   -g, -gff:            Generates a general feature format (.gff) file of the output gene matches
   
-  -i, --identity:      The minimum nucleotide sequence identiy % used by the Blat search
+  -i, --identity:      The minimum nucleotide sequence identiy % used by the Blat search, input as an integer (i.e., "-i 95" for a 95% threshold), default is 90
