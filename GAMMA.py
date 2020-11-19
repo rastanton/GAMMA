@@ -16,7 +16,7 @@ import argparse
 
 ##Written by Richard Stanton (njr5@cdc.gov)
 ##Requires Python/3+ and blat
-##Usage: $ python GAMMA_Exe.py my_scaffolds.fasta gene_db.fasta My_output
+##Usage: $ GAMMA.py my_scaffolds.fasta gene_db.fasta My_output
 
 def PSL_Type(PSL_Line):
     """Takes in a line from a PSL and returns its type"""
