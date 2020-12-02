@@ -35,17 +35,14 @@ The default output of GAMMA is a tab-delimited file with a “.gamma” extensio
 13. Target_Length - The length (in basepairs) of the target sequence.
 14. Strand – The sense of the strand (+ or -) on which the match is found.
 
-Here’s a sample gamma output generated from running GAMMA on a PacBio assembly (AR-0361, https://www.ncbi.nlm.nih.gov/assembly/GCF_002968495.1) using the ResFinder AR gene database (https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/) downloaded on 05-20-2020:
+Here’s a sample gamma output generated from running GAMMA on a drug resistant *Klebsiella pneumoniae* (Accession: SAMN11054834) using the ResFinder AR gene database (https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/) downloaded on 05-20-2020:
 
-| Gene | Contig | Start | Stop | Match_Type | Description | Codon_Changes | BP_Changes | Codon_Percent | BP_Percent | Percent_Length | Match_Length | Target_Length | Strand |
+Gene | Contig | Start | Stop | Match_Type | Description | Codon_Changes | BP_Changes | Codon_Percent | BP_Percent | Percent_Length | Match_Length | Target_Length | Strand |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| fosA_6_ACZD01000244 | AR-0361_chromosome | 4930620 | 4931040 | Mutant | I91V,D138E, | 2 | 18 | 0.9857 | 0.9571 | 1 | 420 | 420 | + |
-| blaSHV-11_1_X98101 | AR-0361_chromosome | 1548139 | 1549000 | Native | No coding mutations | 0 | 2 | 1 | 0.9977 | 1 | 861 | 861 | - |
-| blaTEM-1A_1_HM749966 | AR-0361_plasmid_2 | 27269 | 28130 | Native | No coding mutations | 0 | 1 | 1 | 0.9988 | 1 | 861 | 861 | - |
-| blaOXA-9_1_KQ089875 | AR-0361_plasmid_2 | 28829 | 29654 | Truncation | truncation at codon 112 (of 275 codons),1 coding mutations | 1 | 1 | 0.9964 | 0.9988 | 1 | 825 | 825 | - |
-| blaKPC-2_1_AY034847 | AR-0361_plasmid_2 | 39315 | 40197 | Native | No coding mutations | 0 | 0 | 1 | 1 | 1 | 882 | 882 | - |
-| aph(4)-Ia_1_V01499 | AR-0361_plasmid_6 | 37042 | 38068 | Native | No coding mutations | 0 | 0 | 1 | 1 | 1 | 1026 | 1026 | + |
-| aac(3)-IV_1_DQ241380 | AR-0361_plasmid_6 | 36037 | 36814 | Mutant | W5L, | 1 | 1 | 0.9961 | 0.9987 | 1 | 777 | 777 | + |
-| cmlA1_1_M64556 | AR-0361_plasmid_6 | 28540 | 29800 | Mutant | G412E, | 1 | 1 | 0.9976 | 0.9992 | 1 | 1260 | 1260 | + |
-| aadA2b_1_D43625 | AR-0361_plasmid_6 | 27499 | 28279 | Mutant | G202D, | 1 | 1 | 0.9962 | 0.9987 | 1 | 780 | 780 | + |
-| blaSHV-12_1_KF976405 | AR-0361_plasmid_7 | 54 | 915 | Native | No coding mutations | 0 | 0 | 1 | 1 | 1 | 861 | 861 | + |
+| blaSHV-11_1_X98101 | DHQP1701672_chromosome | 2783310 | 2784171 | Native | No coding mutations | 0 | 8 | 1 | 0.9907 | 1 | 861 | 861 | + |
+| oqxA_1_EU370913 | DHQP1701672_chromosome | 1175518 | 1176694 | Native | No coding mutations | 0 | 10 | 1 | 0.9915 | 1 | 1176 | 1176 | - |
+| oqxB_1_EU370913 | DHQP1701672_chromosome | 1172342 | 1175495 | Mutant | G148N,G540S,D749E, | 3 | 39 | 0.9971 | 0.9876 | 1 | 3153 | 3153 | - |
+| fosA_6_ACZD01000244 | DHQP1701672_chromosome | 4658498 | 4658918 | Native | No coding mutations | 0 | 12 | 1 | 0.9714 | 1 | 420 | 420 | - |
+| blaTEM-1A_1_HM749966 | pDHQP1701672_amr_plasmid | 24988 | 25849 | Native | No coding mutations | 0 | 1 | 1 | 0.9988 | 1 | 861 | 861 | - |
+| blaOXA-9_1_KQ089875 | pDHQP1701672_amr_plasmid | 26548 | 27373 | Truncation | truncation at codon 112 (of 275 codons),1 coding mutations | 1 | 1 | 0.9964 | 0.9988 | 1 | 825 | 825 | - |
+| blaKPC-2_1_AY034847 | pDHQP1701672_amr_plasmid | 37034 | 37916 | Native | No coding mutations | 0 | 0 | 1 | 1 | 1 | 882 | 882 | - |
