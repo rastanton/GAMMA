@@ -1,11 +1,11 @@
 # GAMMA
 **Introduction**
 
-GAMMA (Gene Allele Mutation Microbial Assessment) finds gene matches in microbial genomic data using protein coding (rather than nucleotide) identity, and then translates and annotates the match by providing the type (i.e., mutant, truncation, etc.) and a translated description (i.e., Y190S mutant, truncation at residue 110, etc.). Because microbial gene families often have multiple alleles and existing databases are rarely exhaustive, GAMMA is helpful in both identifying and explaining how unique alleles differ from their closest known matches.
+GAMMA (Gene Allele Mutation Microbial Assessment) is a command line tool that finds gene matches in microbial genomic data using protein coding (rather than nucleotide) identity, and then translates and annotates the match by providing the type (i.e., mutant, truncation, etc.) and a translated description (i.e., Y190S mutant, truncation at residue 110, etc.). Because microbial gene families often have multiple alleles and existing databases are rarely exhaustive, GAMMA is helpful in both identifying and explaining how unique alleles differ from their closest known matches.
 
 **Quick Installation via Conda:**
 
-GAMMA (and all the dependencies) can also be installed via Conda:
+GAMMA (and all the dependencies) can be installed via Conda:
 
 https://bioconda.github.io/recipes/gamma/README.html
 
