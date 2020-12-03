@@ -25,7 +25,7 @@ Deactivate the Conda environment after you are finished (to protect the environm
 ```
 conda deactivate
 ```
-If you download directly via Git, GAMMA runs in Python 3+ and requires the Biopython package (https://github.com/biopython) as well as Blat (https://genome.ucsc.edu/goldenPath/help/blatSpec.html), which has to be in your $PATH.
+If you download directly via Git, GAMMA requires Python 3+, the Biopython package (https://github.com/biopython), and Blat (https://genome.ucsc.edu/goldenPath/help/blatSpec.html), which has to be in your $PATH.
 
 **Usage:**
 
