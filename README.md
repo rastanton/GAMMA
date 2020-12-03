@@ -1,14 +1,37 @@
 # GAMMA
+**Introduction**
+
 GAMMA (Gene Allele and Mutation Assessment) finds gene matches in microbial genomic data using protein coding (rather than nucleotide) identity, and then translates and annotates the match by providing the type (i.e., mutant, truncation, etc.) and a translated description (i.e., Y190S mutant, truncation at residue 110, etc.). Because microbial gene families often have multiple alleles and existing databases are rarely exhaustive, GAMMA is helpful in both identifying and explaining how unique alleles differ from their closest known matches.
 
-GAMMA runs in Python 3+ and requires the Biopython package (https://github.com/biopython) as well as Blat (https://genome.ucsc.edu/goldenPath/help/blatSpec.html), which has to be in your $PATH.
+**Quick Installation via Conda:**
+
+GAMMA (and all the dependencies) can also be installed via Conda:
+https://bioconda.github.io/recipes/gamma/README.html
+To create a new conda environment (called SanitizeMe) and install SanitizeMe into the environment:
+```
+conda create -n GAMMA gamma -y
+```
+Activate the Conda environment using the following command:
+```
+conda activate GAMMA
+```
+Run the GAMMA.py script to see usage:
+```
+GAMMA.py -h
+```
+Deactivate the Conda environment after you are finished (to protect the environment from clashing with other programs):
+```
+conda deactivate
+```
+If you download directly via Git, GAMMA runs in Python 3+ and requires the Biopython package (https://github.com/biopython) as well as Blat (https://genome.ucsc.edu/goldenPath/help/blatSpec.html), which has to be in your $PATH.
+
+**Usage:**
 
 The input for GAMMA is a genome or assembly in fasta format and a multifasta database of the coding sequence of genes. The default output is a ".gamma" file that includes non-overlapping matches to any genes from your database found in your genome. It is run with this command:
-
-> GAMMA.py my_genome.fasta gene_db.fasta output_name [optional arguments]
-
+```
+GAMMA.py my_genome.fasta gene_db.fasta output_name [optional arguments]
+```
 There are five optional arguments:
-
   -a,--all:            Returns all (including overlapping) gene matches
   
   -e, --extended:      Returns all gene mutations, otherwise if there are more than 10 mutations present the count is given
@@ -18,7 +41,9 @@ There are five optional arguments:
   -g, -gff:            Generates a general feature format (.gff) file of the output gene matches
   
   -i, --identity:      The minimum nucleotide sequence identiy % used by the Blat search, input as an integer (i.e., "-i 95" for a 95% threshold), default is 90
-  
+
+**Output:**
+
 The default output of GAMMA is a tab-delimited file with a “.gamma” extension with 14 columns:
 1. Gene – The name of the closest matching gene (target) from the database
 2. Contig – The name of the contig on which the match was found
@@ -34,6 +59,8 @@ The default output of GAMMA is a tab-delimited file with a “.gamma” extensio
 12. Match_Length – The length (in basepairs) of the matching sequence.
 13. Target_Length - The length (in basepairs) of the target sequence.
 14. Strand – The sense of the strand (+ or -) on which the match is found.
+
+Additional outputs in the .gff format and a fasta of the gene matches (in the positive sense) can be generated using the -g and -f options, respectively.
 
 Here’s a sample gamma output generated from running GAMMA on a drug resistant *Klebsiella pneumoniae* (Accession: SAMN11054834) using the ResFinder AR gene database (https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/) downloaded on 05-20-2020:
 
