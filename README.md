@@ -42,7 +42,8 @@ There are five optional arguments:
   
   -i, --identity:      The minimum nucleotide sequence identiy % used by the Blat search, input as an integer (i.e., "-i 95" for a 95% threshold), default is 90
 
-**Output**
+**Output:**
+
 The default output of GAMMA is a tab-delimited file with a “.gamma” extension with 14 columns:
 1. Gene – The name of the closest matching gene (target) from the database
 2. Contig – The name of the contig on which the match was found
