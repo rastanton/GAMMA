@@ -65,7 +65,7 @@ The default output of GAMMA is a tab-delimited file with a “.gamma” extensio
 
 Additional outputs in the .gff format and a fasta of the gene matches (in the positive sense) can be generated using the -g and -f options, respectively.
 
-The sample GAMMA output shown below was generated from running GAMMA on a drug resistant *Klebsiella pneumoniae* (Accession: SAMN11054834) using the ResFinder AR gene database (https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/) downloaded on 05-06-2020. Your install of GAMMA can be tested using the following command with the test genome and gene database included:
+The sample GAMMA output shown below was generated from running GAMMA on a drug resistant *Klebsiella pneumoniae* (Accession: SAMN11054834) using the ResFinder AR gene database (https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/) downloaded on 05-06-2020. Your install of GAMMA can be tested using the following command with the test genome and gene database included (the output file will be called "GAMMA_Test.gamma"):
 
 ```
 GAMMA.py DHQP1701672_complete_genome.fasta ResFinderDB_Combined_05-06-20.fsa GAMMA_Test
