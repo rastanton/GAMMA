@@ -859,6 +859,7 @@ def Best_List(input_contig_list):
     Output_List = []
     for items in input_contig_list:
         Add = 1
+        Star = 0
         List1 = items.split('\t')
         for items_2 in input_contig_list:
             List2 = items_2.split('\t')
@@ -891,14 +892,18 @@ def Best_List(input_contig_list):
                                     Add = 0
                                     break
                                 elif int(List2[13]) == int(List1[13]):
+                                    Star = 1
                                     Order_List = [items, items_2]
                                     Order_List.sort()
                                     if Order_List[0] != items:
                                         Add = 0
                                         break
-        if Add == 1 and float(List1[10]) > 0.5:
-            Out = '\t'.join(List1[0:13])
-            Out = Out + '\t' + List1[-1]
+        if Add == 1 and float(List1[10]) > 0.5 and Star == 0:
+            Out = '\t'.join(List1[0:8]) + '\t' + List1[13] + '\t' + '\t'.join(List1[8:13]) + '\t' + List1[-1]
+            Output_List.append(Out)
+        elif Add == 1 and float(List1[10]) > 0.5 and Star == 1:
+            List1[0] = List1[0] + '‡'
+            Out = '\t'.join(List1[0:8]) + '\t' + List1[13] + '\t' + '\t'.join(List1[8:13]) + '\t' + List1[-1]
             Output_List.append(Out)
     return(Output_List)
                         
@@ -915,7 +920,7 @@ def GAMA_List(PSL, genome_fasta, genes_fasta, verbose):
 def GAMA_Output(PSL, genome_fasta, genes_fasta, Out_File, verbose):
     List1 = GAMA_List(PSL, genome_fasta, genes_fasta, verbose)
     Output = open(Out_File, 'w')
-    Output.write('Gene\tContig\tStart\tStop\tMatch_Type\tDescription\tCodon_Changes\tBP_Changes\tCodon_Percent\tBP_Percent\tPercent_Length\tMatch_Length\tTarget_Length\tStrand\n')
+    Output.write('Gene\tContig\tStart\tStop\tMatch_Type\tDescription\tCodon_Changes\tBP_Changes\tTransversions\tCodon_Percent\tBP_Percent\tPercent_Length\tMatch_Length\tTarget_Length\tStrand\n')
     for lines in List1:
         Output.write(lines + '\n')
     Output.close()
@@ -923,7 +928,7 @@ def GAMA_Output(PSL, genome_fasta, genes_fasta, Out_File, verbose):
 def GAMA_All(PSL, genome_fasta, genes_fasta, Out_File, verbose):
     List1= GAMA_Line_Maker(PSL, genome_fasta, genes_fasta, verbose)
     Output = open(Out_File, 'w')
-    Output.write('Gene\tContig\tStart\tStop\tMatch_Type\tDescription\tCodon_Changes\tBP_Changes\tCodon_Percent\tBP_Percent\tPercent_Length\tMatch_Length\tTarget_Length\tStrand\tTransversions\n')
+    Output.write('Gene\tContig\tStart\tStop\tMatch_Type\tDescription\tCodon_Changes\tBP_Changes\tTransversions\tCodon_Percent\tBP_Percent\tPercent_Length\tMatch_Length\tTarget_Length\tStrand\n')
     for lines in List1:
         Output.write(lines + '\n')
     Output.close()
@@ -1002,9 +1007,6 @@ def main():
                         help="write gene matches as gff file")
     parser.add_argument("-i", "--percent_identity", default=90, type=int,
                         help="minimum nucleotide identity for blat search (default = 90)")
-##    if len(sys.argv) < 3:
-##        parser.print_help()
-##        sys.exit(1)
     args = parser.parse_args()
     if args.extended:
         Verbose = True
