@@ -25,11 +25,13 @@ Deactivate the Conda environment after you are finished (to protect the environm
 ```
 conda deactivate
 ```
-If you download directly via Git, GAMMA requires Python 3+, the Biopython package (https://github.com/biopython), and Blat (https://genome.ucsc.edu/goldenPath/help/blatSpec.html), which has to be in your $PATH.
+If you download directly via Git, GAMMA requires Python 3+, the Biopython package (https://github.com/biopython), and Blat (http://hgdownload.soe.ucsc.edu/admin/exe/), which has to be in your $PATH.
 
 **Usage:**
 
-The input for GAMMA is a genome or assembly in fasta format and a multifasta database of the coding sequence of genes. The default output is a ".gamma" file that includes non-overlapping matches to any genes from your database found in your genome. It is run with this command:
+The input for GAMMA is a genome or assembly in fasta format and a multifasta database of the coding sequence of genes. GAMMA was tested using AR gene databases from AMRFinderPlus (https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/), ARG-ANNOT (http://backup.mediterranee-infection.com/arkotheque/client/ihumed/_depot_arko/articles/2041/arg-annot-v4-aa-may2018_doc.fasta), and ResFinder (https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/).
+
+The default output is a ".gamma" file that includes non-overlapping matches to any genes from your database found in your genome. It is run with this command:
 ```
 GAMMA.py my_genome.fasta gene_db.fasta output_name [optional arguments]
 ```
@@ -65,7 +67,7 @@ The default output of GAMMA is a tab-delimited file with a “.gamma” extensio
 
 Additional outputs in the .gff format and a fasta of the gene matches (in the positive sense) can be generated using the -g and -f options, respectively.
 
-The sample GAMMA output shown below was generated from running GAMMA on a drug resistant *Klebsiella pneumoniae* (Accession: SAMN11054834) using the ResFinder AR gene database (https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/) downloaded on 05-06-2020. Your install of GAMMA can be tested using the following command with the test genome and gene database included (the output file will be called "GAMMA_Test.gamma"):
+The sample GAMMA output shown below was generated from running GAMMA on a drug resistant *Klebsiella pneumoniae* (Accession: SAMN11054834) using a combination of all of the ResFinder AR gene databases (https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/) downloaded on 05-06-2020. Your install of GAMMA can be tested using the following command with the test genome and gene database included (the output file will be called "GAMMA_Test.gamma"):
 
 ```
 GAMMA.py DHQP1701672_complete_genome.fasta ResFinderDB_Combined_05-06-20.fsa GAMMA_Test
