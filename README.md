@@ -83,6 +83,6 @@ Gene | Contig | Start | Stop | Match_Type | Description | Codon_Changes | BP_Cha
 | blaOXA-9_1_KQ089875 | pDHQP1701672_amr_plasmid | 26548 | 27373 | Truncation | truncation at codon 112 (of 275 codons),1 coding mutations | 1 | 1 | 0 | 0.9964 | 0.9988 | 1 | 825 | 825 | - |
 | blaKPC-2_1_AY034847 | pDHQP1701672_amr_plasmid | 37034 | 37916 | Native | No coding mutations | 0 | 0 | 0 | 1 | 1 | 1 | 882 | 882 | - |
 
-Citing Gamma:
+Citing GAMMA:
 
 Stanton RA, Vlachos N, Halpin AL. GAMMA: a tool for the rapid identification, classification, and annotation of translated gene matches from sequencing data. Bioinformatics. 2021 Aug 20:btab607. doi: 10.1093/bioinformatics/btab607. Epub ahead of print. PMID: 34415321.
