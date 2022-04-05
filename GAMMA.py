@@ -1000,6 +1000,29 @@ def GAMMA_Out(fasta, gene_db, output, identity, verbose):
     subprocess.call('blat' + ' ' + gene_db + ' '  + fasta + ' -noHead -minIdentity=' + str(identity) + ' ' + output + '.psl', shell=True)
     GAMA_Output(output +'.psl', fasta, gene_db, output + '.gamma', verbose)
 
+def GAMMA_Name_Adder(gamma_file, name):
+    f = open(gamma_file, 'r')
+    List1 = []
+    for line in f:
+        List1.append(line)
+    f.close()
+    Out = open(gamma_file, 'w')
+    Out.write('Name\t' + List1[0])
+    for lines in List1[1:]:
+        Out.write(name + '\t' + lines)
+    Out.close()
+
+def GAMMA_Headless(gamma_file):
+    f = open(gamma_file, 'r')
+    List1 = []
+    for line in f:
+        List1.append(line)
+    f.close()
+    Out = open(gamma_file, 'w')
+    for lines in List1[1:]:
+        Out.write(lines)
+    Out.close()
+
 def main():
     parser = argparse.ArgumentParser(description="""This scripts makes annotated gene calls from matches in an assembly using a gene database""")
     parser.add_argument("input_fasta", type=str, help="input fasta")
@@ -1013,6 +1036,10 @@ def main():
                         help="write fasta of gene matches")
     parser.add_argument("-g", "--gff", action="store_true",
                         help="write gene matches as gff file")
+    parser.add_argument("-n", "--name", action="store_true",
+                        help="writes name in front of each gene match line")
+    parser.add_argument("-l", "--headless", action="store_true",
+                        help="removes the header from the output gamma file")
     parser.add_argument("-i", "--percent_identity", default=90, type=int,
                         help="minimum nucleotide identity for blat search (default = 90)")
     args = parser.parse_args()
@@ -1028,6 +1055,10 @@ def main():
         GAMA_Fasta_Writer(args.input_fasta, args.output + ".gamma", args.output  + ".fasta")
     if args.gff:
         GFF_Output(args.output + ".gamma", args.output + ".gff")
+    if args.name:
+        GAMMA_Name_Adder(args.output + '.gamma', args.output)
+    if args.headless:
+        GAMMA_Headless(args.output + '.gamma')
 
 if __name__ == "__main__":
     sys.exit(main())
