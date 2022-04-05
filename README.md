@@ -35,7 +35,8 @@ The default output is a ".gamma" file that includes non-overlapping matches to a
 ```
 GAMMA.py my_genome.fasta gene_db.fasta output_name [optional arguments]
 ```
-There are five optional arguments:
+There are seven optional arguments:
+  
   -a,--all:            Returns all (including overlapping) gene matches
   
   -e, --extended:      Returns all gene mutations, otherwise if there are more than 10 mutations present the count is given
