@@ -6,7 +6,7 @@ The usage is the same as with GAMMA:
 ```
 GAMMA-S.py my_genome.fasta gene_db.fasta output_name [optional arguments]
 ```
-There are four optional arguments: 
+There are five optional arguments: 
   
   -a,--all:            Returns all (including overlapping) gene matches
   
