@@ -42,7 +42,11 @@ There are five optional arguments:
   
   -f, --fasta:         Writes out a multifasta file of the gene matches
   
-  -g, -gff:            Generates a general feature format (.gff) file of the output gene matches
+  -g, --gff:            Generates a general feature format (.gff) file of the output gene matches
+  
+  -n, --name:            Writes the output name in front of each gene match line in the .gamma output file
+  
+  -l, --headless:            Removes the column headers in the .gamma output file
   
   -i, --identity:      The minimum nucleotide sequence identiy % used by the Blat search, input as an integer (i.e., "-i 95" for a 95% threshold), default is 90
 
@@ -83,6 +87,11 @@ Gene | Contig | Start | Stop | Match_Type | Description | Codon_Changes | BP_Cha
 | blaOXA-9_1_KQ089875 | pDHQP1701672_amr_plasmid | 26548 | 27373 | Truncation | truncation at codon 112 (of 275 codons),1 coding mutations | 1 | 1 | 0 | 0.9964 | 0.9988 | 1 | 825 | 825 | - |
 | blaKPC-2_1_AY034847 | pDHQP1701672_amr_plasmid | 37034 | 37916 | Native | No coding mutations | 0 | 0 | 0 | 1 | 1 | 1 | 882 | 882 | - |
 
-Citing GAMMA:
+
+**GAMMA-S:**
+
+GAMMA-S (Gene Allele Mutation Microbial Assessment-Sequence) finds best matches from a gene database without translating them--so it will find the best match by nucleotides, rather by the translated protein sequence. However, it can perform protein-protein sequence matching as well, which requires two protein fastas as the input. Details on the usage, arguments, and outputs of GAMMA-S are described in a seperate GAMMA-S_README.md included in this package.
+
+**Citing GAMMA:**
 
 Stanton RA, Vlachos N, Halpin AL. GAMMA: a tool for the rapid identification, classification, and annotation of translated gene matches from sequencing data. Bioinformatics. 2021 Aug 20:btab607. doi: 10.1093/bioinformatics/btab607. Epub ahead of print. PMID: 34415321.
