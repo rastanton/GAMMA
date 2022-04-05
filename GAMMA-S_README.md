@@ -14,6 +14,8 @@ There are four optional arguments:
  
   -p, --protein:       For protein-protein comparisons, requires two protein sequence fastas as input
   
+  -m, --minimum:       The minimum length percent match for output, input as an integer (i.e., "-m 50" for a 50% minimum match length to be reported), not active if the -a/--all option is used default is 20
+  
   -i, --identity:      The minimum nucleotide sequence identiy % used by the Blat search, input as an integer (i.e., "-i 95" for a 95% threshold), default is 90
   
 The output of GAMMA-S is a tab-delimited file with a “.gamma” extension with 17 columns:
