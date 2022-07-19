@@ -49,7 +49,7 @@ There are seven optional arguments:
   
   -l, --headless:            Removes the column headers in the .gamma output file
   
-  -i, --identity:      The minimum nucleotide sequence identiy % used by the Blat search, input as an integer (i.e., "-i 95" for a 95% threshold), default is 90
+  -i, --identity:      The minimum nucleotide sequence identity % used by the Blat search, input as an integer (i.e., "-i 95" for a 95% threshold), default is 90
 
 **Output:**
 
