@@ -13,6 +13,7 @@ from decimal import *
 getcontext().prec = 4
 import math
 import argparse
+from unidecode import unidecode
 
 ##Written by Richard Stanton (njr5@cdc.gov)
 ##Requires Python/3+ and blat
@@ -910,7 +911,9 @@ def Best_List(input_contig_list):
             Out = '\t'.join(List1[0:8]) + '\t' + List1[13] + '\t' + '\t'.join(List1[8:13]) + '\t' + List1[-1]
             Output_List.append(Out)
         elif Add == 1 and float(List1[10]) > 0.5 and Star == 1:
-            List1[0] = List1[0] + '‡'
+            #encoding '‡'
+            double_cross = '‡'
+            List1[0] = List1[0] + double_cross.encode('ascii', 'ignore').decode('utf-8')
             Out = '\t'.join(List1[0:8]) + '\t' + List1[13] + '\t' + '\t'.join(List1[8:13]) + '\t' + List1[-1]
             Output_List.append(Out)
     return(Output_List)
