@@ -12,6 +12,7 @@ from decimal import *
 getcontext().prec = 4
 import math
 import argparse
+from unidecode import unidecode
 
 ##Written by Richard Stanton (njr5@cdc.gov)
 ##Requires Python/3+ and blat
@@ -581,7 +582,9 @@ def Best_List(input_contig_list, length_minimum):
         if Add == 1 and Star == 0 and float(List1[14]) > (length_minimum / 100):
             Output_List.append(items)
         elif Add == 1 and Star == 1 and float(List1[14]) > (length_minimum / 100):
-            List1[0] = List1[0] + '‡'
+            #endcoding '‡'
+            double_cross = '‡'
+            List1[0] = List1[0] + double_cross.encode('ascii', 'ignore').decode('utf-8')
             Out = '\t'.join(List1)
             Output_List.append(Out)
     return(Output_List)
