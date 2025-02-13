@@ -98,7 +98,7 @@ GAMMA_Parallel is a script to run GAMMA in parallel for all of the *.fasta files
 ```
 GAMMA_Parallel.py gene_db.fasta
 ```
-The ouutput of GAMMA_Parallel is a set of .gamma files with the .fasta name of the input and the gene database file connected by a double underscore.
+The output of GAMMA_Parallel is a set of .gamma files with the .fasta name of the input and the gene database file connected by a double underscore.
 
 **Citing GAMMA:**
 
