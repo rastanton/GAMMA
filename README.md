@@ -93,6 +93,13 @@ Gene | Contig | Start | Stop | Match_Type | Description | Codon_Changes | BP_Cha
 
 GAMMA-S (Gene Allele Mutation Microbial Assessment-Sequence) finds best matches from a gene database without translating them--so it will find the best match by nucleotides, rather by the translated protein sequence. However, it can perform protein-protein sequence matching as well, which requires two protein fastas as the input. Details on the usage, arguments, and outputs of GAMMA-S are described in a seperate GAMMA-S_README.md included in this package.
 
+**GAMMA_Parallel:**
+GAMMA_Parallel is a script to run GAMMA in parallel for all of the *.fasta files in the current working directory against a common gene database (also named with the *.fasta convention). It is run like so:
+```
+GAMMA_Parallel.py gene_db.fasta
+```
+The ouutput of GAMMA_Parallel is a set of .gamma files with the .fasta name of the input and the gene database file connected by a double underscore.
+
 **Citing GAMMA:**
 
 Stanton RA, Vlachos N, Halpin AL. GAMMA: a tool for the rapid identification, classification, and annotation of translated gene matches from sequencing data. Bioinformatics. 2021 Aug 20:btab607. doi: 10.1093/bioinformatics/btab607. Epub ahead of print. PMID: 34415321.
