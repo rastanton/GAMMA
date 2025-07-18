@@ -103,3 +103,10 @@ The output of GAMMA_Parallel is a set of .gamma files with the .fasta name of th
 **Citing GAMMA:**
 
 Stanton RA, Vlachos N, Halpin AL. GAMMA: a tool for the rapid identification, classification, and annotation of translated gene matches from sequencing data. Bioinformatics. 2021 Aug 20:btab607. doi: 10.1093/bioinformatics/btab607. Epub ahead of print. PMID: 34415321.
+
+Org: NCEZID\
+Version: 1.0\
+Status: Maintained\
+Keywords: antimicrobial, WGS, gene calling\
+Labor Hours: 500\
+Contact Email: ncezid_shareit@cdc.gov
